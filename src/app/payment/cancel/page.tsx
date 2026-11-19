@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function PaymentCancel(){return <main className="container grid min-h-[60vh] place-items-center py-16"><div className="card max-w-lg p-10 text-center"><div className="text-4xl">↩</div><h1 className="mt-4 text-2xl font-extrabold">Checkout cancelled</h1><p className="mt-3 text-slate-500">No payment was recorded. You can try again whenever you are ready.</p><Link className="btn btn-primary mt-7" href="/pricing">Return to plans</Link></div></main>}

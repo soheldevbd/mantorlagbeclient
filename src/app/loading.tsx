@@ -1,0 +1,1 @@
+export default function Loading(){return <main className="container grid min-h-[50vh] place-items-center"><div className="text-center"><div className="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-blue-100 border-t-blue-700"/><p className="mt-4 text-sm text-slate-500">Loading MentorLagbe…</p></div></main>}

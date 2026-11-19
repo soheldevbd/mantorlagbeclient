@@ -1,0 +1,3 @@
+"use client";
+import {useEffect,useState} from "react";import Link from "next/link";import {api} from "@/lib/api";import {toast} from "sonner";
+export default function Saved(){const [items,setItems]=useState<any[]>([]);useEffect(()=>{api<any[]>("/profile/saved").then(setItems).catch(e=>toast.error(e.message))},[]);return <div className="space-y-3">{items.map(x=><Link className="card block p-5 hover:border-blue-300" key={x._id} href={`/tuitions/${x._id}`}><b>{x.title}</b><p className="mt-1 text-sm text-slate-500">{x.subject} · ৳{x.monthlyFee}/month</p></Link>)}{!items.length&&<div className="card p-8 text-center text-slate-500">No saved tuitions yet.</div>}</div>}
