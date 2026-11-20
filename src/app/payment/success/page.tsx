@@ -1,3 +1,35 @@
-"use client";
-import {useEffect,useState} from "react";import Link from "next/link";import {useSearchParams} from "next/navigation";import {api} from "@/lib/api";
-export default function PaymentSuccess(){const params=useSearchParams();const [status,setStatus]=useState("Verifying your payment…");useEffect(()=>{const id=params.get("session_id");if(id)api(`/payments/verify/${id}`).then((x:any)=>setStatus(x.paid?"Your Pro plan is now active.":"Payment is not completed yet.")).catch(()=>setStatus("We could not verify this payment yet."));else setStatus("Missing payment session.")},[params]);return <main className="container grid min-h-[60vh] place-items-center py-16"><div className="card max-w-lg p-10 text-center"><div className="text-4xl">✓</div><h1 className="mt-4 text-2xl font-extrabold">Payment status</h1><p className="mt-3 text-slate-500">{status}</p><Link className="btn btn-primary mt-7" href="/dashboard">Go to dashboard</Link></div></main>}
+'use client';
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
+import { api } from '@/lib/api';
+export default function PaymentSuccess() {
+  const params = useSearchParams();
+  const id = params.get('session_id');
+  const [status, setStatus] = useState('Verifying your payment…');
+  useEffect(() => {
+    if (id)
+      api(`/payments/verify/${id}`)
+        .then((x: any) =>
+          setStatus(
+            x.paid
+              ? 'Your Pro plan is now active.'
+              : 'Payment is not completed yet.',
+          ),
+        )
+        .catch(() => setStatus('We could not verify this payment yet.'));
+  }, [id]);
+  const displayedStatus = id ? status : 'Missing payment session.';
+  return (
+    <main className="container grid min-h-[60vh] place-items-center py-16">
+      <div className="card max-w-lg p-10 text-center">
+        <div className="text-4xl">✓</div>
+        <h1 className="mt-4 text-2xl font-extrabold">Payment status</h1>
+        <p className="mt-3 text-slate-500">{displayedStatus}</p>
+        <Link className="btn btn-primary mt-7" href="/dashboard">
+          Go to dashboard
+        </Link>
+      </div>
+    </main>
+  );
+}
