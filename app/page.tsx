@@ -30,7 +30,7 @@ export default async function Home() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-base-100 to-secondary/10">
+      <section className="relative overflow-hidden bg-linear-to-br from-primary/10 via-base-100 to-secondary/10">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 lg:grid-cols-2 lg:py-24">
           <div>
             <span className="fade-up badge badge-primary badge-soft mb-4">EdTech · Online and Home Tuition</span>
@@ -47,7 +47,7 @@ export default async function Home() {
           </div>
           <div className="relative mx-auto w-full max-w-md">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://picsum.photos/seed/mentorlagbe-hero/900/1000" alt="Students learning with a mentor" className="aspect-[4/5] w-full rounded-3xl object-cover shadow-2xl" />
+            <img src="https://picsum.photos/seed/mentorlagbe-hero/900/1000" alt="Students learning with a mentor" className="aspect-4/5 w-full rounded-3xl object-cover shadow-2xl" />
             <div className="floaty absolute -left-4 bottom-10 flex items-center gap-3 rounded-2xl border border-base-300 bg-base-100 p-3 shadow-lg"><CheckCircle2 className="text-success" /><div><p className="text-sm font-semibold">Application accepted</p><p className="text-xs opacity-60">HSC Higher Math</p></div></div>
             <div className="floaty absolute -right-3 top-10 flex items-center gap-2 rounded-2xl border border-base-300 bg-base-100 p-3 shadow-lg [animation-delay:1.5s]"><Star className="fill-secondary text-secondary" size={18} /><span className="text-sm font-semibold">4.9 tutor rating</span></div>
           </div>
