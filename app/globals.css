@@ -1,8 +1,10 @@
-@import "tailwindcss";
-@plugin "daisyui" { themes: false; }
+@import 'tailwindcss';
+@plugin "daisyui" {
+  themes: false;
+}
 
 @plugin "daisyui/theme" {
-  name: "mentor";
+  name: 'mentor';
   default: true;
   prefersdark: false;
   color-scheme: light;
@@ -37,7 +39,7 @@
 }
 
 @plugin "daisyui/theme" {
-  name: "mentordark";
+  name: 'mentordark';
   default: false;
   prefersdark: true;
   color-scheme: dark;
@@ -71,15 +73,61 @@
   --noise: 0;
 }
 
-html { scroll-behavior: smooth; }
-body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-.section-title { @apply text-3xl md:text-4xl font-bold tracking-tight; }
-.section-sub { @apply mt-3 max-w-2xl mx-auto opacity-70; }
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+}
+.section-title {
+  @apply text-3xl md:text-4xl font-bold tracking-tight;
+}
+.section-sub {
+  @apply mt-3 max-w-2xl mx-auto opacity-70;
+}
 
-@keyframes fade-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
-@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-.fade-up { animation: fade-up 0.7s ease both; }
-.fade-up-2 { animation: fade-up 0.7s 0.15s ease both; }
-.fade-up-3 { animation: fade-up 0.7s 0.3s ease both; }
-.floaty { animation: float 5s ease-in-out infinite; }
-@media (prefers-reduced-motion: reduce) { .fade-up, .fade-up-2, .fade-up-3, .floaty { animation: none; } }
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.fade-up {
+  animation: fade-up 0.7s ease both;
+}
+.fade-up-2 {
+  animation: fade-up 0.7s 0.15s ease both;
+}
+.fade-up-3 {
+  animation: fade-up 0.7s 0.3s ease both;
+}
+.floaty {
+  animation: float 5s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-up,
+  .fade-up-2,
+  .fade-up-3,
+  .floaty {
+    animation: none;
+  }
+}
