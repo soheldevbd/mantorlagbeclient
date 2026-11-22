@@ -1,2 +1,4 @@
-import { Spinner } from "@/components/ui";
-export default function Loading() { return <Spinner />; }
+import { Spinner } from '@/components/ui';
+export default function Loading() {
+  return <Spinner />;
+}
